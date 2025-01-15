@@ -11,6 +11,8 @@
                 validanUnos = false;
             else if (kontrola is TextBox && !(kontrola as TextBox).Text.Postavljen())
                 validanUnos = false;
+            else if (kontrola is RichTextBox && !(kontrola as RichTextBox).Text.Postavljen())
+                validanUnos = false;
 
             if (!validanUnos)
             {

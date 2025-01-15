@@ -1,3 +1,4 @@
+using FIT.WinForms.IspitIB230046;
 using FIT.WinForms.Izvjestaji;
 
 namespace FIT.WinForms
@@ -13,7 +14,7 @@ namespace FIT.WinForms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            var startnaForma = new frmPocetna();           
+            var startnaForma = new frmPretragaIB230046();           
             Application.Run(startnaForma);
         }
     }
