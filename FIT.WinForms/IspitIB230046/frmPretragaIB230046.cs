@@ -16,7 +16,7 @@ namespace FIT.WinForms.IspitIB230046
     public partial class frmPretragaIB230046 : Form
     {
         public DLWMSDbContext dbContext { get; set; } = new();
-        private bool doRealod = false;
+        private bool showReloadMessage = false;
         public frmPretragaIB230046()
         {
             InitializeComponent();
@@ -54,15 +54,15 @@ namespace FIT.WinForms.IspitIB230046
             dtpDatumOd.Value = new DateTime(1900, 1, 1);
 
             ReloadData();
-            doRealod = true;
+            showReloadMessage = true;
         }
 
         private void ReloadData()
         {
-            if (!doRealod) return;
+            
             dgvStudenti.DataSource = null;
             var lstSource = GetData();
-            if (!lstSource.Any())
+            if (!lstSource.Any() && showReloadMessage)
                 MessageBox.Show("Ne postoje takvi");
             dgvStudenti.DataSource = lstSource;
         }
