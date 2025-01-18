@@ -30,34 +30,49 @@
         {
             lblKonekcijaInfo = new Label();
             btnIzvjestaj = new Button();
+            btnPretraaga = new Button();
             SuspendLayout();
             // 
             // lblKonekcijaInfo
             // 
             lblKonekcijaInfo.AutoSize = true;
             lblKonekcijaInfo.Font = new Font("Segoe UI", 15F);
-            lblKonekcijaInfo.Location = new Point(100, 72);
+            lblKonekcijaInfo.Location = new Point(114, 96);
             lblKonekcijaInfo.Name = "lblKonekcijaInfo";
-            lblKonekcijaInfo.Size = new Size(0, 28);
+            lblKonekcijaInfo.Size = new Size(0, 35);
             lblKonekcijaInfo.TabIndex = 0;
             // 
             // btnIzvjestaj
             // 
-            btnIzvjestaj.Location = new Point(138, 115);
+            btnIzvjestaj.Location = new Point(158, 153);
+            btnIzvjestaj.Margin = new Padding(3, 4, 3, 4);
             btnIzvjestaj.Name = "btnIzvjestaj";
-            btnIzvjestaj.Size = new Size(181, 23);
+            btnIzvjestaj.Size = new Size(207, 31);
             btnIzvjestaj.TabIndex = 1;
             btnIzvjestaj.Text = "Izvještaj";
             btnIzvjestaj.UseVisualStyleBackColor = true;
             btnIzvjestaj.Click += btnIzvjestaj_Click;
             // 
+            // btnPretraaga
+            // 
+            btnPretraaga.Location = new Point(158, 192);
+            btnPretraaga.Margin = new Padding(3, 4, 3, 4);
+            btnPretraaga.Name = "btnPretraaga";
+            btnPretraaga.Size = new Size(207, 31);
+            btnPretraaga.TabIndex = 1;
+            btnPretraaga.Text = "Ispit";
+            btnPretraaga.UseVisualStyleBackColor = true;
+            btnPretraaga.Click += btnPretraaga_Click;
+            // 
             // frmPocetna
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(450, 184);
+            ClientSize = new Size(514, 245);
+            Controls.Add(btnPretraaga);
             Controls.Add(btnIzvjestaj);
             Controls.Add(lblKonekcijaInfo);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmPocetna";
@@ -72,5 +87,6 @@
 
         private Label lblKonekcijaInfo;
         private Button btnIzvjestaj;
+        private Button btnPretraaga;
     }
 }

@@ -15,6 +15,7 @@
         public const string EmailDomain = "EmailDomain";
         public const string UsernameOrPasswordNotValid = "UsernameOrPasswordNotValid";  
         public const string DuplicatedCourse = "DuplicatedCourse";
+        public const string NevalidanUnos = "Unos nije validan";
 
     }
 }

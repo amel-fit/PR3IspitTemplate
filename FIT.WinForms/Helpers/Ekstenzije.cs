@@ -17,6 +17,7 @@ namespace FIT.WinForms.Helpers
             comboBox.DataSource = dataSource;
             comboBox.DisplayMember = displayMember;
             comboBox.ValueMember = valueMember;
+            comboBox.SelectedIndex = 0;
         }
         public static Image ToImage(this byte[] sadrzaj)
         {            
