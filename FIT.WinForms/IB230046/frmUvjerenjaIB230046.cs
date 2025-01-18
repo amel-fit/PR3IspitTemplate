@@ -89,28 +89,29 @@ namespace FIT.WinForms.IB230046
                 {
                     Invoke(() =>
                     {
-                        string svrha = txtSvrha.Text;
-                        string vrsta = cmbVrsta.Text;
-                        Student.Uvjerenja.Add(
-                        new UvjerenjeIB230046()
-                        {
-                            DatumKreiranja = DateTime.Now,
-                            Student = Student,
-                            Printano = false,
-                            Svrha = svrha,
-                            Vrsta = vrsta,
-                            Uplatnica = prva.Uplatnica
-                        });
-                        DBClassIB230046.dbContext.SaveChanges();
-                        string toAdd = $"{DateTime.Now} -> {vrsta} ({Student.Indeks}) - {Student.ImePrezime} u svrhu {svrha}\n";
+                    string svrha = txtSvrha.Text;
+                    string vrsta = cmbVrsta.Text;
+                    Student.Uvjerenja.Add(
+                    new UvjerenjeIB230046()
+                    {
+                        DatumKreiranja = DateTime.Now,
+                        Student = Student,
+                        Printano = false,
+                        Svrha = svrha,
+                        Vrsta = vrsta,
+                        Uplatnica = prva.Uplatnica
+                    });
+                    DBClassIB230046.dbContext.SaveChanges();
+                    string toAdd = $"{DateTime.Now} -> {vrsta} ({Student.Indeks}) - {Student.ImePrezime} u svrhu {svrha}\n";
                         rtInfo.Text += toAdd;
                         rtInfo.SelectionStart = rtInfo.Text.Length;
                         rtInfo.ScrollToCaret();
-                        Thread.Sleep(300);
                     });
+                    Thread.Sleep(300);
                 }
             });
             MessageBox.Show("Dodavanje završeno");
+            SetSource();
         }
 
         private bool Uslov()
