@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using FIT.Data.IB230046;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 
 namespace FIT.Data
 {
@@ -18,5 +20,15 @@ namespace FIT.Data
         {
             return $"{Indeks} {Ime} {Prezime}";
         }
+        public virtual DrzavaIB230046 Drzava{ get; set; }
+        public virtual GradIB230046 Grad { get; set; }
+        public virtual List<PolozeniPredmetiIB230046> PolozeniPredmeti { get; set; }
+
+        [NotMapped]
+        public double Prosjek => PolozeniPredmeti.Count == 0 ? 5 : PolozeniPredmeti.Average(pp => pp.Ocjena);
+        [NotMapped]
+        public string GradTXT => Grad.Naziv;
+        [NotMapped]
+        public string DrzavaTXT => Drzava.Naziv;
     }
 }
