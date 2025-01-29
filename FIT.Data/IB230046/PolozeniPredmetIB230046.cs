@@ -18,5 +18,9 @@ namespace FIT.Data.IB230046
         public DateTime DatumPolaganja { get; set; }
         public string Napomena { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Predmet.Naziv}({Ocjena})";
+        }
     }
 }

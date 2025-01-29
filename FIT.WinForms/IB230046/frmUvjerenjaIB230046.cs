@@ -1,11 +1,13 @@
 ﻿using FIT.Data;
 using FIT.Data.IB230046;
+using FIT.WinForms.Izvjestaji;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,10 +65,15 @@ namespace FIT.WinForms.IB230046
 
         private void Prinaj(DataGridViewCellEventArgs e)
         {
+           
             var uvjerenje = dgvUvjerenja.Rows[e.RowIndex].DataBoundItem as UvjerenjeIB230046;
+
+            new frmIzvjestaji(uvjerenje).Show();
+                
             uvjerenje.Printano = true;
             DBClassIB230046.dbContext.SaveChanges();
-
+                
+            
         }
 
         private void Brisi(DataGridViewCellEventArgs e)

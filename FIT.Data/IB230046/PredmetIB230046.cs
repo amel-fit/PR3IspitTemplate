@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FIT.Data.IB230046
 {
-    [Table("Premeti")]
+    [Table("Predmeti")]
     public class PredmetIB230046
     {
         public int Id { get; set; }
