@@ -222,6 +222,7 @@
             btnPrint.TabIndex = 3;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.Click += btnPrint_Click;
             // 
             // btnNovaPoruka
             // 

@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="IspitIB230046\dsPorukeStudenta.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsPorukeStudenta.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -53,6 +58,10 @@
   <ItemGroup>
     <None Update="DLWMS.db">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="IspitIB230046\dsPorukeStudenta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPorukeStudenta.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

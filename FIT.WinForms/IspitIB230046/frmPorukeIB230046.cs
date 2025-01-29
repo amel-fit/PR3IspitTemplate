@@ -94,7 +94,12 @@ namespace FIT.WinForms.IspitIB230046
 
         private void frmPorukeIB230046_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            new Izvjestaji.frmIzvjestaji(dtoStudent).Show();
         }
     }
 }

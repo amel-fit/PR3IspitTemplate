@@ -17,6 +17,7 @@ namespace FIT.WinForms.IspitIB230046
     {
         public DLWMSDbContext dbContext { get; set; } = new();
         private bool showReloadMessage = false;
+        private bool doRefresh = false;
         public frmPretragaIB230046()
         {
             InitializeComponent();
@@ -53,13 +54,14 @@ namespace FIT.WinForms.IspitIB230046
 
             dtpDatumOd.Value = new DateTime(1900, 1, 1);
 
+            doRefresh = true;
             ReloadData();
             showReloadMessage = true;
         }
 
         private void ReloadData()
         {
-            
+            if (doRefresh != true) return;
             dgvStudenti.DataSource = null;
             var lstSource = GetData();
             if (!lstSource.Any() && showReloadMessage)
@@ -80,7 +82,7 @@ namespace FIT.WinForms.IspitIB230046
         private bool Uslov(Student student)
         {
             var semstar = dbContext.Semestri.First(s => s.Id == cmbSemestar.SelectedIndex + 1);
-            var uloga = dbContext.Uloge.First(u => u.Id == cmbUloga.SelectedIndex + 1);
+            var uloga = cmbUloga.SelectedItem as UlogaIB230046;
             DateTime DateOd = dtpDatumOd.Value;
             DateTime DateDo = dtpDatumDo.Value;
             var studentUloga = dbContext.StudentiUloge.Where(su => su.StudentId == student.Id).ToArray();

@@ -14,5 +14,12 @@ namespace FIT.Data.IspitIB230046
         public string Naziv { get; set; }
         public int Semestar { get; set; }
 
+        public virtual List<StudentPorukaIB230046> PorukePredmeta { get; set; }
+
+        public override string ToString()
+        {
+            return Naziv;
+        }
+
     }
 }
